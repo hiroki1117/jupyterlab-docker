@@ -4,11 +4,10 @@ RUN pip install --upgrade pip
 RUN pip install jupyterlab
 RUN jupyter serverextension enable --py jupyterlab
 
-RUN pip install jupyterthemes
-RUN jupyter labextension install @lckr/jupyterlab_variableinspector
-RUN jupyter labextension install @arbennett/base16-solarized-dark
-RUN jupyter labextension install @arbennett/base16-gruvbox-dark
-RUN jupyter labextension enable @lckr/jupyterlab_variableinspector @arbennett/base16-solarized-dark
+RUN jupyter labextension install @jupyterlab/latex &&\
+    jupyter labextension install @lckr/jupyterlab_variableinspector &&\
+    jupyter labextension install @arbennett/base16-solarized-dark &&\
+    jupyter labextension install @arbennett/base16-gruvbox-dark
 
 #設定ファイル
 COPY overrides.json /opt/conda/share/jupyter/lab/settings
