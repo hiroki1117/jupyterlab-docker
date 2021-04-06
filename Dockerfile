@@ -5,8 +5,7 @@ RUN pip install mdutils
 RUN pip install jupyterlab
 RUN jupyter serverextension enable --py jupyterlab
 
-RUN jupyter labextension install @jupyterlab/latex &&\
-    jupyter labextension install @lckr/jupyterlab_variableinspector &&\
+RUN jupyter labextension install @lckr/jupyterlab_variableinspector &&\
     jupyter labextension install @arbennett/base16-solarized-dark &&\
     jupyter labextension install @arbennett/base16-gruvbox-dark
 
